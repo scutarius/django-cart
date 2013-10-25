@@ -68,6 +68,9 @@ class Cart:
             )
         except models.Item.DoesNotExist:
             raise ItemDoesNotExist
+        else:
+            item.quantity=quantity
+            item.save()
             
     def count(self):
         result = 0
